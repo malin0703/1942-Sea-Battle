@@ -8,6 +8,7 @@ public class TurnGui : MonoBehaviour
     public ClientRPCManager RpcHandler;
 
     public GUISkin Skin;
+	public GUIStyle m_GUIStyle;
     public float Widht = 200.0f, Height = 100.0f;
     private string _turnMessage = "Prepare for battle!";
 
@@ -32,27 +33,30 @@ public class TurnGui : MonoBehaviour
         if (Skin != null)
         {
             GUI.skin = Skin;
+			m_GUIStyle = GUI.skin.label;
+			m_GUIStyle.fixedHeight = 50;
+			m_GUIStyle.fontSize = 30;
         }
 
-        var centeredRect = new Rect((Screen.width - Widht) / 2, 2.5f, Widht, Height);
-        var leftRect = new Rect(0.0f, 2.5f, Widht/1.5f, Height);
-        var rightRect = new Rect((Screen.width - Widht/2), 2.5f, Widht/2, Height);
+		var centeredRect = new Rect((Screen.width - Widht) / 2, 2.5f, 400, 80);
+        var leftRect = new Rect(0.0f, 2.5f, 250, 80);
+		var rightRect = new Rect((Screen.width - Widht/2), 2.5f, Widht/2, 80);
 
         GUILayout.BeginArea(centeredRect, GUI.skin.box);
         {
-            GUILayout.Label(_turnMessage, GUI.skin.label);
+			GUILayout.Label(_turnMessage, m_GUIStyle);
         }
         GUILayout.EndArea();
 
         GUILayout.BeginArea(leftRect, GUI.skin.box);
         {
-            GUILayout.Label(("EnemyHP: " + GManager.EnemyHP), GUI.skin.label);
+			GUILayout.Label(("EnemyHP: " + GManager.EnemyHP), m_GUIStyle);
         }
         GUILayout.EndArea();
 
         GUILayout.BeginArea(rightRect, GUI.skin.box);
         {
-            GUILayout.Label("HP: " + GManager.HP, GUI.skin.label);
+			GUILayout.Label("HP: " + GManager.HP, m_GUIStyle);
         }
         GUILayout.EndArea();
 

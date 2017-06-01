@@ -65,7 +65,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-       // bool allPlayersInRoom = (GameStatus == EGameStatus.InRoom && PhotonNetwork.room.playerCount == 2);
         bool allPlayersInRoom = (PhotonNetwork.inRoom && PhotonNetwork.room.playerCount == 2 && GameStatus == EGameStatus.SearchForOpponent);
         if (allPlayersInRoom) StartGame();
     }

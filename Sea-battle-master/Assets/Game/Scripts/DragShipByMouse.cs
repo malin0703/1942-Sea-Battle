@@ -66,8 +66,9 @@ public class DragShipByMouse : MonoBehaviour
 
         if (_triggeredTiles.Count > 0)
         {
-			
+			//取戰艦放置的位置
             GetShipPositionInField();
+			//確認資訊
             StartCoroutine(WaitForFixedUpdate());
         }
 
