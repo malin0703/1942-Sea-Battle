@@ -96,7 +96,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ChatState.cs" />
+    <Compile Include="Assets\Game\Scripts\ChangeOffer.cs" />
     <Compile Include="Assets\Game\Scripts\ClientRPCManager.cs" />
     <Compile Include="Assets\Game\Scripts\CreateTilesForField.cs" />
     <Compile Include="Assets\Game\Scripts\DragShipByMouse.cs" />
@@ -253,6 +253,7 @@
     <Compile Include="Assets\PhotonChatApi\ChatOperationCode.cs" />
     <Compile Include="Assets\PhotonChatApi\ChatParameterCode.cs" />
     <Compile Include="Assets\PhotonChatApi\ChatPeer.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatState.cs" />
     <Compile Include="Assets\PhotonChatApi\ChatUserStatus.cs" />
     <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
   </ItemGroup>
